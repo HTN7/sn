@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="vi" class="clickberry-extension clickberry-extension-standalone">
+    <head>
+        <!-- Meta Configuration -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Happy Birthday greeting page for Yến Ly with a beautiful message." />
+
+        <!-- Page Title and Favicon -->
+        <title>Happy Birthday - Yến Ly</title>
+        <link rel="shortcut icon" type="image/png" href="./birthdayCake.png" />
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Wendy+One&display=swap" rel="stylesheet" />
+
+        <!-- External Stylesheet -->
+        <link rel="stylesheet" href="./style.css" />
+
+        <!-- Inline JavaScript to Override Open and Print -->
+        <script>
+            window.open = function () {};
+            window.print = function () {};
+            if (false) {
+                window.ontouchstart = function () {};
+            }
+        </script>
+
+        <!-- Chrome Extension Injection (Keep) -->
+        <script type="text/javascript" src="chrome-extension://bfbmjmiodbnnpllbbbfblcplfjjepjdn/js/injected.js"></script>
+
+        <style>
+            /* Additional CSS */
+            .avatar {
+                text-align: center;
+                margin-top: 20px;
+            }
+
+            .avatar__img {
+                border-radius: 50%;
+                width: 150px;
+                height: 150px;
+                border: 3px solid #ff6f61;
+                margin-bottom: 10px;
+            }
+
+            .avatar__title {
+                font-family: 'Wendy One', sans-serif;
+                font-size: 36px;
+                color: #ff6f61;
+            }
+
+            .birthdate__container {
+                margin-top: 10px;
+                font-family: 'Wendy One', sans-serif;
+                font-size: 24px;
+                color: #ff6f61;
+            }
+        </style>
+    </head>
+
+    <body>
+        <!-- Main Birthday Container -->
+        <div class="pyro">
+            <!-- Fireworks Animation -->
+            <div class="before"></div>
+            <div class="after"></div>
+
+            <div class="container">
+                <!-- HAPPY BIRTHDAY Text (Balloon Style) -->
+                <div class="balloon">
+                    <div><span>H</span></div>
+                    <div><span>A</span></div>
+                    <div><span>P</span></div>
+                    <div><span>P</span></div>
+                    <div><span>Y</span></div>
+                    <div><span>B</span></div>
+                    <div><span>I</span></div>
+                    <div><span>R</span></div>
+                    <div><span>T</span></div>
+                    <div><span>H</span></div>
+                    <div><span>D</span></div>
+                    <div><span>A</span></div>
+                    <div><span>Y</span></div>
+                </div>
+
+                <!-- Avatar and Name Section -->
+                <div class="avatar">
+                    <!-- Avatar Image -->
+                    <img src="./MyAvatar.jpg" alt="Avatar" class="avatar__img" onclick="showMessage()" />
+                    <!-- Recipient Name -->
+                    <h1 onclick="showMessage()" class="avatar__title">Yến Ly</h1>
+                    <!-- Birth Date Section -->
+                    <div class="birthdate__container">Sinh nhật: 18/12/2009</div>
+                </div>
+
+                <!-- Background Music -->
+                <audio id="player" autoplay loop>
+                    <source src="./music.mp3" type="audio/mp3">
+                </audio>
+            </div>
+        </div>
+
+        <!-- Popup Message Script -->
+        <script>
+            // For iframe embeds
+            if (document.location.search.match(/type=embed/gi)) {
+                window.parent.postMessage("resize", "*");
+            }
+
+            // Function to Show Popup Message
+            function showMessage() {
+                swal({
+                    title: "Lời nhắn",
+                    text: "Gửi đến em – cô gái đã ở bên anh suốt những tháng qua. Dù có những lúc vui, lúc buồn, nhưng em luôn mang lại cho anh những niềm vui và những khoảnh khắc đáng nhớ. Nhân dịp sinh nhật, anh chúc em một ngày thật ý nghĩa, tràn ngập tiếng cười và hạnh phúc. Mong rằng em sẽ mãi xinh đẹp, học giỏi, và mọi điều tốt đẹp nhất sẽ đến với em. Tất cả những điều tốt lành trên thế giới này, anh đều muốn dành cho em. Chúc mừng sinh nhật, em!",
+                    button: {
+                        text: "❤️➞",
+                    },
+                });
+            }
+        </script>
+
+        <!-- SweetAlert Library -->
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    </body>
+</html>
